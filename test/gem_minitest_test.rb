@@ -47,5 +47,9 @@ class GemMinitestTest < Minitest::Test
         assert_equal("Buzz",@test.fizz_buzz(10))
         assert_equal("FizzBuzz", @test.fizz_buzz(30))
     end
+    #hellotest
+    def test_hello
+        assert_output(Hello/n) { @test.hello}
+    end
 end
 
