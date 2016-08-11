@@ -3,56 +3,49 @@ require 'gem_minitest'
  
 class GemMinitestTest < Minitest::Test
     def setup
-        @my = GemMiniTest.new
+        @test = GemMiniTest.new
     end
  
-    #oddメソッドテスト
-    #整数を入力として受け取り，値が奇数ならば真を返す
+    #oddtest
     def test_odd
-        assert_equal(false, @my.odd(0))
-        assert_equal(true,  @my.odd(1))
-        assert_equal(false, @my.odd(2))
+        assert_equal(false,@test.odd(0))
+        assert_equal(true,@test.odd(1))
+        assert_equal(false,@test.odd(2))
+        assert_equal(true,@test.odd(3))
     end
  
-    #check_numberメソッドテスト
+    #check_numbertest
     def test_check_number
-        assert_equal(false, @my.check_number(0))
-        assert_equal(false, @my.check_number(123))
-        assert_equal(false, @my.check_number(1001))
-        assert_equal(true,  @my.check_number(1000))
+        assert_equal(false,@test.check_number(0))
+        assert_equal(false,@test.check_number(123))
+        assert_equal(true,@test.check_number(1234))
+        assert_equal(false,@test.check_number(9999))
+        assert_equal(false,@test.check_number(44444))
     end
  
-    #enough_lengthメソッドテスト
+    #enough_lengthtest
     def test_enough_length
-        #境界値チェック2,3,8,9桁
-        assert_equal(false, @my.enough_length("12"))
-        assert_equal(true,  @my.enough_length("123"))
-        assert_equal(true,  @my.enough_length("12345678"))
-        assert_equal(false, @my.enough_length("123456789"))
+        assert_equal(false,@test.enough_length("12"))
+        assert_equal(true,@test.enough_length("123"))
+        assert_equal(true,@test.enough_length("12345678"))
+        assert_equal(false,@test.enough_length("123456789"))
     end
  
-    #divideメソッドテスト
+    #dividetest
     def test_divide
-        assert_equal(2, @my.divide(50, 25))
-        assert_equal(20, @my.divide(200, 10))
+        assert_equal(2,@test.divide(4, 2))
+        assert_equal(10,@test.divide(100, 10))
     end
  
-    #fizz_buzzメソッドテスト
+    #fizz_buzztest
     def test_fizz_buzz
-        assert_equal("",         @my.fizz_buzz(0))
-        assert_equal("",         @my.fizz_buzz(1))
-        assert_equal("Fizz",     @my.fizz_buzz(3))
-        assert_equal("",         @my.fizz_buzz(4))
-        assert_equal("Buzz",     @my.fizz_buzz(5))
-        assert_equal("",         @my.fizz_buzz(14))
-        assert_equal("FizzBuzz", @my.fizz_buzz(15))
-        assert_equal("",         @my.fizz_buzz(16))
-        assert_equal("",         @my.fizz_buzz(101))
-    end
- 
-    #引数に数値を1 つとる．3 の倍数の時は”Fizz”を返す．5 の倍数の時は”Buzz”を返す．3 と5 の公倍数のときは”FizzBuzz”を返す．
-    def test_hello
-        assert_output(/Hello/) { @my.hello}
+        assert_equal("",@test.fizz_buzz(0))
+        assert_equal("Fizz",@test.fizz_buzz(3))
+        assert_equal("Buzz",@test.fizz_buzz(5))
+        assert_equal("FizzBuzz",@test.fizz_buzz(15))
+        assert_equal("Fizz",@test.fizz_buzz(6))
+        assert_equal("Buzz",@test.fizz_buzz(10))
+        assert_equal("FizzBuzz", @test.fizz_buzz(30))
     end
 end
 
