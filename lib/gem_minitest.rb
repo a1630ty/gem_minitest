@@ -37,12 +37,12 @@ class GemMiniTest
         end
     end
      
-    #引数として割る数と割られる数を取り，割り算をした結果を返す．ただし，0 で割り算をしたら例外を発生する
+    #6-5 メソッドの作成(4)引数として割る数と割られる数を取り，割り算をした結果を返す．ただし，0 で割り算をしたら例外を発生する
     def divide(num_n, num_d)
         return num_n / num_d
     end
      
-    #引数に数値を1 つとる．3 の倍数の時は”Fizz”を返す．5 の倍数の時は”Buzz”を返す．3 と5 の公倍数のときは”FizzBuzz”を返す．
+    #6-6 メソッドの作成(5)引数に数値を1 つとる．3 の倍数の時は”Fizz”を返す．5 の倍数の時は”Buzz”を返す．3 と5 の公倍数のときは”FizzBuzz”を返す．
     def fizz_buzz(num)
         if num==0 then
             return ""
@@ -61,5 +61,9 @@ class GemMiniTest
         end
          
         return ""
+    end
+    #6-7 メソッドの作成(6)標準出力に「Hello」と表示するプログラムのテストと実装を行いなさい
+    def hello()
+        puts "Hello"
     end
 end
