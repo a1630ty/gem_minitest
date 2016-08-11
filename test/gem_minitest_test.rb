@@ -49,7 +49,7 @@ class GemMinitestTest < Minitest::Test
     end
     #hellotest
     def test_hello
-        assert_output("Hello/n") { @test.hello}
+        assert_output("Hello\n") { @test.hello}
     end
 end
 
